@@ -79,40 +79,6 @@ public class ResumeBuilder {
             String jobTitle = jobTitleField.getText();
             String companyName = companyNameField.getText();
 
-//            // Generate the resume output
-//            String resumeOutput = "PERSONAL INFORMATION:\n"
-//                    + "Full Name: " + fullName + "\n"
-//                    + "Contact Number: " + contactNumber + "\n"
-//                    + "Email Address: " + emailAddress + "\n"
-//                    + "Address: " + address + "\n\n"
-//                    + "EDUCATION:\n"
-//                    + "Highest Education: " + highestEducation + "\n"
-//                    + "Institution Name: " + institutionName + "\n"
-//                    + "Completion Year: " + completionYear + "\n\n"
-//                    + "WORK EXPERIENCE:\n"
-//                    + "Years of Experience: " + workExperience + "\n"
-//                    + "Job Title: "                    + jobTitle + "\n"
-//                    + "Company Name: " + companyName;
-// Generate the resume output
-// Generate the resume output
-//            StringBuilder resumeOutput = new StringBuilder();
-//            resumeOutput.append("**************************************\n");
-//            resumeOutput.append("*             RESUME                 *\n");
-//            resumeOutput.append("**************************************\n\n");
-//            resumeOutput.append("PERSONAL INFORMATION:\n");
-//            resumeOutput.append("Full Name: " + fullName + "\n");
-//            resumeOutput.append("Contact Number: " + contactNumber + "\n");
-//            resumeOutput.append("Email Address: " + emailAddress + "\n");
-//            resumeOutput.append("Address: " + address + "\n\n");
-//            resumeOutput.append("EDUCATION:\n");
-//            resumeOutput.append("Highest Education: " + highestEducation + "\n");
-//            resumeOutput.append("Institution Name: " + institutionName + "\n");
-//            resumeOutput.append("Completion Year: " + completionYear + "\n\n");
-//            resumeOutput.append("WORK EXPERIENCE:\n");
-//            resumeOutput.append("Years of Experience: " + workExperience + "\n");
-//            resumeOutput.append("Job Title: " + jobTitle + "\n");
-//            resumeOutput.append("Company Name: " + companyName + "\n");
-            // Generate the resume output as an HTML string
             String resumeOutput = "<html>"
                     + "<head>"
                     + "<style>"
