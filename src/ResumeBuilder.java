@@ -78,8 +78,7 @@ public class ResumeBuilder {
             String workExperience = yearsOfExperienceField.getText();
             String jobTitle = jobTitleField.getText();
             String companyName = companyNameField.getText();
-
-            String resumeOutput = "<html>"
+            String resupreview = "<html>"
                     + "<head>"
                     + "<style>"
                     + "body { font-family: Arial, sans-serif; }"
@@ -106,12 +105,77 @@ public class ResumeBuilder {
                     + "</body>"
                     + "</html>";
 
+            String htmlCode = "<html><head><title>Resume</title><style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;background-color:#f2f2f2;color:#333;line-height:1.5;padding:20px}.container{max-width:794px;margin:0 auto;background-color:#fff;box-shadow:0 0 10px rgba(0,0,0,0.1);padding:40px;position:relative;animation:fade-in 0.5s ease-out;-webkit-animation:fade-in 0.5s ease-out}@keyframes fade-in{from{opacity:0}to{opacity:1}}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}h1{text-align:center;margin-bottom:20px;color:#2c3e50;animation:slide-in 0.5s ease-out;-webkit-animation:slide-in 0.5s ease-out}@keyframes slide-in{from{transform:translateY(-50px);opacity:0}to{transform:translateY(0);opacity:1}}@-webkit-keyframes slide-in{from{-webkit-transform:translateY(-50px);opacity:0}to{-webkit-transform:translateY(0);opacity:1}}h2{margin-top:30px;color:#2980b9;animation:fade-in 0.5s ease-out;-webkit-animation:fade-in 0.5s ease-out}p{margin:10px 0}.resume-item{margin-bottom:30px;animation:slide-in 0.5s ease-out;-webkit-animation:slide-in 0.5s ease-out}.resume-item:hover{box-shadow:0 0 10px rgba(0,0,0,0.2);transition:box-shadow 0.3s ease}</style></head></html>";
 
+            String resumeHtml = "<body>" +
+                                "  <div class=\"container\">" +
+                                "    <div class=\"header\">" +
+                                "      <h1>RESUME</h1>" +
+                                "    </div>" +
+                                "    <div class=\"personal-information section\">" +
+                                "      <h2>PERSONAL INFORMATION</h2>" +
+                                "      <div class=\"row\">" +
+                                "        <div class=\"col\">" +
+                                "          <p>Full Name:</p>" +
+                                "          <h3>%s</h3>" +
+                                "        </div>" +
+                                "        <div class=\"col\">" +
+                                "          <p>Contact Number:</p>" +
+                                "          <h3>%s</h3>" +
+                                "        </div>" +
+                                "        <div class=\"col\">" +
+                                "          <p>Email Address:</p>" +
+                                "          <h3>%s</h3>" +
+                                "        </div>" +
+                                "        <div class=\"col\">" +
+                                "          <p>Address:</p>" +
+                                "          <h3>%s</h3>" +
+                                "        </div>" +
+                                "      </div>" +
+                                "    </div>" +
+                                "    <div class=\"education section\">" +
+                                "      <h2>EDUCATION</h2>" +
+                                "      <div class=\"row\">" +
+                                "        <div class=\"col\">" +
+                                "          <p>Highest Education:</p>" +
+                                "          <h3>%s</h3>" +
+                                "        </div>" +
+                                "        <div class=\"col\">" +
+                                "          <p>Institution Name:</p>" +
+                                "          <h3>%s</h3>" +
+                                "        </div>" +
+                                "        <div class=\"col\">" +
+                                "          <p>Completion Year:</p>" +
+                                "          <h3>%s</h3>" +
+                                "        </div>" +
+                                "      </div>" +
+                                "    </div>" +
+                                "    <div class=\"work-experience section\">" +
+                                "      <h2>WORK EXPERIENCE</h2>" +
+                                "      <div class=\"row\">" +
+                                "        <div class=\"col\">" +
+                                "          <p>Years of Experience:</p>" +
+                                "          <h3>%s</h3>" +
+                                "        </div>" +
+                                "        <div class=\"col\">" +
+                                "          <p>Job Title:</p>" +
+                                "          <h3>%s</h3>" +
+                                "        </div>" +
+                                "        <div class=\"col\">" +
+                                "          <p>Company Name:</p>" +
+                                "          <h3>%s</h3>" +
+                                "        </div>" +
+                                "      </div>" +
+                                "    </div>" +
+                                "  </div>" +
+                                "</body>";
+            resumeHtml = String.format(resumeHtml, fullName, contactNumber, emailAddress, address, highestEducation, institutionName, completionYear, workExperience, jobTitle, companyName);
+            String resumeOutput = htmlCode+""+resumeHtml;
 
             // Create a dialog box to display the generated resume
                     StringBuilder stringBuilder = new StringBuilder();
                     stringBuilder.append(resumeOutput);
-                    String fileName = "resum.html"; // Change the file name as desired
+                    String fileName = "RESUMEREBUILD.html"; // Change the file name as desired
                     try (FileWriter fileWriter = new FileWriter(fileName)) {
                         fileWriter.write(stringBuilder.toString());
                         fileWriter.flush();
@@ -120,7 +184,7 @@ public class ResumeBuilder {
                         ex.printStackTrace();
                     }
 
-            JOptionPane.showMessageDialog(null, resumeOutput, "Generated Resume", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, resupreview, "Generated Resume", JOptionPane.INFORMATION_MESSAGE);
         });
 
 
